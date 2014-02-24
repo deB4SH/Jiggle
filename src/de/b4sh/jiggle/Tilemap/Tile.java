@@ -3,6 +3,7 @@ package de.b4sh.jiggle.Tilemap;
 import de.b4sh.jiggle.System.Renderable;
 import de.b4sh.jiggle.System.Updateable;
 import de.b4sh.jiggle.Texture.TStorage;
+import de.b4sh.jiggle.Texture.TextureEvents;
 
 import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.opengl.GL11.glPopMatrix;
@@ -19,20 +20,20 @@ public class Tile implements Renderable, Updateable{
         glPushMatrix();
 
         //bind texture
-        TStorage.bindTexture(0);
+        TextureEvents.getInstance().bind(0);
 
         glBegin(GL_QUADS);
         {
             glTexCoord2f(0,0);
             glVertex2f(0,0);
 
-            glTexCoord2d(0,50);
+            glTexCoord2d(0,1);
             glVertex2f(0,50);
 
-            glTexCoord2d(50,50);
+            glTexCoord2d(1,1);
             glVertex2f(50,50);
 
-            glTexCoord2d(50,0);
+            glTexCoord2d(1,0);
             glVertex2f(50,0);
 
         }

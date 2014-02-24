@@ -4,15 +4,16 @@ import java.util.ArrayList;
 
 public class TStorage {
 
-    private static ArrayList<Texture> textureList;
+    private ArrayList<Texture> textureList;
 
     public TStorage() {
-        textureList = new ArrayList<Texture>();
+        this.textureList = new ArrayList<Texture>();
+        TextureEvents.getInstance().setTextureStorage(this);
     }
 
     public void loadTexture(String filename)
     {
-        textureList.add(new Texture(filename));
+        this.textureList.add(new Texture(filename));
 
         int a = 0;
     }
@@ -20,23 +21,23 @@ public class TStorage {
     public void unloadTexutre(String filename)
     {
         Texture tmp = new Texture("");
-        for(Texture e: textureList)
+        for(Texture e: this.textureList)
         {
             if(e.getFileName() == filename)
             {
                 tmp = e;
             }
         }
-        textureList.remove(tmp);
+        this.textureList.remove(tmp);
         tmp = null;
     }
 
-    public static void bindTexture(int id)
+    public void bindTexture(int id)
     {
-        if(textureList.get(id) != null)
+        if(this.textureList.get(id) != null)
         {
             System.out.println("Binding Texture: " + id);
-            textureList.get(id).bind(0);
+            this.textureList.get(id).bind();
         }
         else
             System.out.println("Cannot bind Texture: " +id);

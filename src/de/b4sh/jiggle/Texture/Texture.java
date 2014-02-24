@@ -46,10 +46,10 @@ public class Texture {
 
     }
 
-    public void bind(int unit)
+    public void bind()
     {
-        glActiveTexture(GL_TEXTURE0+unit);
-        glBindTexture(GL_TEXTURE_2D, handle);
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(target,handle);
     }
 
     public String getFileName() {
