@@ -1,4 +1,4 @@
-package de.b4sh.jiggle.Texture.Image;
+package de.b4sh.pengins.Texture.Image;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -57,7 +57,7 @@ public class Image implements ImageData {
         final BufferedImage bufferedImage;
 
         //check if graphic got an alpha level
-        /*if(this.image.getColorModel().hasAlpha())
+        if(this.image.getColorModel().hasAlpha())
         {
             bufferedImage = new BufferedImage(glAlphaColorModel,raster,false, new Hashtable());
         }
@@ -65,9 +65,6 @@ public class Image implements ImageData {
         {
             bufferedImage = new BufferedImage(glColorModel,raster,false,new Hashtable());
         }
-        */
-
-        bufferedImage = new BufferedImage(glAlphaColorModel, raster, false, new Hashtable());
 
         final Graphics graphics = bufferedImage.getGraphics();
         graphics.setColor(new Color(1,0,0,0));

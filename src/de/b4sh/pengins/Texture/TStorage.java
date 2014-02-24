@@ -1,4 +1,4 @@
-package de.b4sh.jiggle.Texture;
+package de.b4sh.pengins.Texture;
 
 import java.util.ArrayList;
 
@@ -36,7 +36,6 @@ public class TStorage {
     {
         if(this.textureList.get(id) != null)
         {
-            System.out.println("Binding Texture: " + id);
             this.textureList.get(id).bind();
         }
         else

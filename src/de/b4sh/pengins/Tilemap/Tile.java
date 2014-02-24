@@ -1,9 +1,8 @@
-package de.b4sh.jiggle.Tilemap;
+package de.b4sh.pengins.Tilemap;
 
-import de.b4sh.jiggle.System.Renderable;
-import de.b4sh.jiggle.System.Updateable;
-import de.b4sh.jiggle.Texture.TStorage;
-import de.b4sh.jiggle.Texture.TextureEvents;
+import de.b4sh.pengins.System.Renderable;
+import de.b4sh.pengins.System.Updateable;
+import de.b4sh.pengins.Texture.TextureEvents;
 
 import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.opengl.GL11.glPopMatrix;

@@ -1,4 +1,4 @@
-package de.b4sh.jiggle.Texture.TextureAddins;
+package de.b4sh.pengins.Texture.TextureAddins;
 
 public class TextureOptions {
 

@@ -1,4 +1,4 @@
-package de.b4sh.jiggle.Texture.Image;
+package de.b4sh.pengins.Texture.Image;
 
 import java.nio.ByteBuffer;
 

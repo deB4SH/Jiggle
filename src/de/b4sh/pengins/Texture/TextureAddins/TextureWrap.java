@@ -1,4 +1,4 @@
-package de.b4sh.jiggle.Texture.TextureAddins;
+package de.b4sh.pengins.Texture.TextureAddins;
 
 import static org.lwjgl.opengl.GL11.GL_REPEAT;
 import static org.lwjgl.opengl.GL11.GL_CLAMP;

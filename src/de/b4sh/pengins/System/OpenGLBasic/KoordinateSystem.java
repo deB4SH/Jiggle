@@ -1,4 +1,4 @@
-package de.b4sh.jiggle.System.OpenGLBasic;
+package de.b4sh.pengins.System.OpenGLBasic;
 
 import static org.lwjgl.opengl.GL11.*;
 

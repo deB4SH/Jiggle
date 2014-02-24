@@ -1,15 +1,10 @@
-package de.b4sh.jiggle.Texture;
+package de.b4sh.pengins.Texture;
 
-import de.b4sh.jiggle.System.Renderable;
-import de.b4sh.jiggle.Texture.Image.Image;
-import de.b4sh.jiggle.Texture.TextureAddins.TextureTarget;
+import de.b4sh.pengins.Texture.Image.Image;
+import de.b4sh.pengins.Texture.TextureAddins.TextureTarget;
 
 import static org.lwjgl.opengl.GL11.*;
-import static org.lwjgl.opengl.GL12.GL_TEXTURE_WRAP_R;
 import static org.lwjgl.opengl.GL12.glTexImage3D;
-import static org.lwjgl.opengl.GL13.GL_TEXTURE0;
-import static org.lwjgl.opengl.GL13.glActiveTexture;
-import static org.lwjgl.opengl.GL14.GL_GENERATE_MIPMAP;
 
 public class Texture {
 

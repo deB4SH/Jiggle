@@ -1,4 +1,4 @@
-package de.b4sh.jiggle.Texture;
+package de.b4sh.pengins.Texture;
 
 public class TextureEvents {
     private static TextureEvents ourInstance = new TextureEvents();
