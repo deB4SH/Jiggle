@@ -36,21 +36,10 @@ public class Texture {
             this.imageDepth     = this.image.getDepth();
 
             this.handle = glGenTextures();
-            glBindTexture(this.target,this.handle);
-
-            switch(target) {
-                case 3:
-                    glTexImage3D(target,0,image.getFormat(),image.getWidth(), image.getHeight(), image.getDepth(),0,image.getFormat(),image.getType(),image.getImageData());
-                    break;
-
-                case 2:
-                    glTexImage2D(target,0,image.getFormat(),image.getWidth(), image.getHeight(),0,image.getFormat(),image.getType(),image.getImageData());
-                    break;
-
-                case 1:
-                    glTexImage1D(target,0,image.getFormat(),image.getWidth(),0,image.getFormat(),image.getType(),image.getImageData());
-                    break;
-            }
+            glBindTexture(GL_TEXTURE_2D,this.handle);
+            glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+            glTexImage2D(GL_TEXTURE_2D,0,image.getFormat(),image.getWidth(), image.getHeight(),0,image.getFormat(),image.getType(),image.getImageData());
 
             glBindTexture(target, 0); // unbind texture
         }
@@ -60,7 +49,7 @@ public class Texture {
     public void bind(int unit)
     {
         glActiveTexture(GL_TEXTURE0+unit);
-        glBindTexture(this.target, handle);
+        glBindTexture(GL_TEXTURE_2D, handle);
     }
 
     public String getFileName() {

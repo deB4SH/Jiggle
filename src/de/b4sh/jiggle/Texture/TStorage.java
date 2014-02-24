@@ -33,7 +33,13 @@ public class TStorage {
 
     public static void bindTexture(int id)
     {
-        textureList.get(id).bind(0);
+        if(textureList.get(id) != null)
+        {
+            System.out.println("Binding Texture: " + id);
+            textureList.get(id).bind(0);
+        }
+        else
+            System.out.println("Cannot bind Texture: " +id);
     }
 
 
