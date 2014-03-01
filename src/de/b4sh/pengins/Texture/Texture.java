@@ -2,9 +2,13 @@ package de.b4sh.pengins.Texture;
 
 import de.b4sh.pengins.Texture.Image.Image;
 import de.b4sh.pengins.Texture.TextureAddins.TextureTarget;
+import org.lwjgl.BufferUtils;
+
+import java.nio.IntBuffer;
 
 import static org.lwjgl.opengl.GL11.*;
-import static org.lwjgl.opengl.GL12.glTexImage3D;
+import static org.lwjgl.opengl.GL12.*;
+import static org.lwjgl.opengl.GL14.*;
 
 public class Texture {
 
@@ -31,10 +35,20 @@ public class Texture {
             this.imageDepth     = this.image.getDepth();
 
             this.handle = glGenTextures();
+
+            System.out.println(handle);
+
             glBindTexture(GL_TEXTURE_2D,this.handle);
+
             glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-            glTexImage2D(GL_TEXTURE_2D,0,image.getFormat(),image.getWidth(), image.getHeight(),0,image.getFormat(),image.getType(),image.getImageData());
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+            glTexParameteri(GL_TEXTURE_2D, GL_GENERATE_MIPMAP, GL_TRUE);
+
+            glTexImage2D(GL_TEXTURE_2D, 0, image.getFormat(), image.getWidth(), image.getHeight(), 0, image.getFormat(), image.getType(), image.getImageData());
 
             glBindTexture(target, 0); // unbind texture
         }
@@ -43,7 +57,6 @@ public class Texture {
 
     public void bind()
     {
-        glEnable(GL_TEXTURE_2D);
         glBindTexture(target,handle);
     }
 

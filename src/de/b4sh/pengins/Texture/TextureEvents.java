@@ -20,4 +20,5 @@ public class TextureEvents {
     public void setTextureStorage(TStorage textureStorage) {
         this.textureStorage = textureStorage;
     }
+    public int getTextureHandle(int id){return this.textureStorage.getTexture(id).handle;}
 }

@@ -42,5 +42,10 @@ public class TStorage {
             System.out.println("Cannot bind Texture: " +id);
     }
 
+    public Texture getTexture(int id)
+    {
+        return this.textureList.get(id);
+    }
+
 
 }
