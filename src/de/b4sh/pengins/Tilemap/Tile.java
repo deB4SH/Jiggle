@@ -27,17 +27,17 @@ public class Tile implements Renderable, Updateable{
 
             glBegin(GL_QUADS);
             {
-                glVertex2f(0,0);
-                glTexCoord2f(0,0);
-
                 glVertex2f(50,0);
-                glTexCoord2d(1,0);
+                glTexCoord2f(1,0);
 
                 glVertex2f(50,50);
                 glTexCoord2d(1,1);
 
                 glVertex2f(0,50);
                 glTexCoord2d(0,1);
+
+                glVertex2f(0,0);
+                glTexCoord2d(0,0);
 
             }
             glEnd();

@@ -10,6 +10,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.Hashtable;
 
+import static org.lwjgl.opengl.GL11.GL_RGB;
 import static org.lwjgl.opengl.GL11.GL_RGBA;
 import static org.lwjgl.opengl.GL11.GL_UNSIGNED_BYTE;
 
@@ -106,11 +107,19 @@ public class Image implements ImageData {
 
     @Override
     public int getType() {
-        return GL_RGBA;
+        return GL_UNSIGNED_BYTE;
     }
 
     @Override
     public int getFormat() {
-        return GL_UNSIGNED_BYTE;
+
+        if(this.image.getColorModel().hasAlpha())
+        {
+            return GL_RGBA;
+        }
+        else
+        {
+            return GL_RGB;
+        }
     }
 }
